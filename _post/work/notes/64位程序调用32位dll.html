@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>64位程序调用32位dll | 布布子的博客</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="/logo.ico">
+    <meta name="description" content="探索世界的魅力">
+    
+    <link rel="preload" href="/assets/css/0.styles.a5a0d673.css" as="style"><link rel="preload" href="/assets/js/app.0404c36e.js" as="script"><link rel="preload" href="/assets/js/3.597370e5.js" as="script"><link rel="preload" href="/assets/js/1.28e85978.js" as="script"><link rel="preload" href="/assets/js/22.f4338ab2.js" as="script"><link rel="prefetch" href="/assets/js/10.69dfa7b3.js"><link rel="prefetch" href="/assets/js/11.d77e6e86.js"><link rel="prefetch" href="/assets/js/12.cd4dda7a.js"><link rel="prefetch" href="/assets/js/13.f8176768.js"><link rel="prefetch" href="/assets/js/14.26c79d86.js"><link rel="prefetch" href="/assets/js/15.28ec253a.js"><link rel="prefetch" href="/assets/js/16.56cf81cb.js"><link rel="prefetch" href="/assets/js/17.4af10bcd.js"><link rel="prefetch" href="/assets/js/18.970c9a64.js"><link rel="prefetch" href="/assets/js/19.84764de5.js"><link rel="prefetch" href="/assets/js/20.dfdf088a.js"><link rel="prefetch" href="/assets/js/21.8559d6a7.js"><link rel="prefetch" href="/assets/js/23.2421e94c.js"><link rel="prefetch" href="/assets/js/4.42bf73c8.js"><link rel="prefetch" href="/assets/js/5.df2e2f43.js"><link rel="prefetch" href="/assets/js/6.0860c949.js"><link rel="prefetch" href="/assets/js/7.848e9fde.js"><link rel="prefetch" href="/assets/js/8.a30961c9.js"><link rel="prefetch" href="/assets/js/9.a17844ad.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a5a0d673.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-7dd95ae2><div data-v-7dd95ae2><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>布布子的博客</h3> <p class="description" data-v-59e6cb88>探索世界的魅力</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <!---->
+        2023
+      </a></span></div></div> <div class="hide" data-v-7dd95ae2><header class="navbar" data-v-7dd95ae2><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">布布子的博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      开发
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/_post/java/index.html" class="nav-link"><i class="undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/_post/web/index.html" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/_post/flutter/index.html" class="nav-link"><i class="undefined"></i>
+  Flutter
+</a></li><li class="dropdown-item"><!----> <a href="/_post/qt/index.html" class="nav-link"><i class="undefined"></i>
+  QT
+</a></li><li class="dropdown-item"><!----> <a href="/_post/work/index.html" class="nav-link"><i class="undefined"></i>
+  Work
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-7dd95ae2></div> <aside class="sidebar" data-v-7dd95ae2><div class="personal-info-wrapper" data-v-1fad0c41 data-v-7dd95ae2><!----> <!----> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>12</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>0</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      开发
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/_post/java/index.html" class="nav-link"><i class="undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/_post/web/index.html" class="nav-link"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/_post/flutter/index.html" class="nav-link"><i class="undefined"></i>
+  Flutter
+</a></li><li class="dropdown-item"><!----> <a href="/_post/qt/index.html" class="nav-link"><i class="undefined"></i>
+  QT
+</a></li><li class="dropdown-item"><!----> <a href="/_post/work/index.html" class="nav-link"><i class="undefined"></i>
+  Work
+</a></li></ul></div></div> <!----></nav> <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>笔记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/_post/work/notes/64位程序调用32位dll.html" class="active sidebar-link">64位程序调用32位dll</a></li><li><a href="/_post/work/notes/Edge中开启IE模式.html" class="sidebar-link">Edge中开启IE模式</a></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-7dd95ae2><h3 class="title" data-v-59e6cb88>64位程序调用32位dll</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <!---->
+        2023
+      </a></span></div></div> <div data-v-7dd95ae2><div data-v-7dd95ae2><main class="page" style="padding-right:0;"><section style="display:;"><div class="page-title"><h1 class="title">64位程序调用32位dll</h1> <div data-v-8a445198><i class="iconfont reco-account" data-v-8a445198><span data-v-8a445198>bubuzi</span></i> <i class="iconfont reco-date" data-v-8a445198><span data-v-8a445198>2/25/2023</span></i> <!----> <!----></div></div> <div class="theme-reco-content content__default"><h2 id="官网概述"><a href="#官网概述" class="header-anchor">#</a> 官网概述</h2> <blockquote><p><a href="https://learn.microsoft.com/en-us/windows/win32/winprog64/process-interoperability" target="_blank" rel="noopener noreferrer">在64位Windows操作系统上，64位进程无法加载32位动态链接库。此外，32位进程不能加载64位DLL。但是，64位Windows支持64位和32位进程之间的远程过程调用(RPC)(在同一台计算机上和跨计算机)。在64位Windows操作系统下，进程外的32位COM服务器可以与64位客户端通信，进程外的64位COM服务器可以与32位客户端通信。因此，如果您有一个不支持COM的32位DLL，您可以将其包装在一个进程外的COM服务器中，并使用COM来封送对64位进程的调用。<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <h2 id="使用visual-studio创建atl项目验证"><a href="#使用visual-studio创建atl项目验证" class="header-anchor">#</a> 使用visual studio创建ATL项目验证</h2> <h3 id="创建项目"><a href="#创建项目" class="header-anchor">#</a> 创建项目</h3> <h4 id="_1-创建一个com01的项目"><a href="#_1-创建一个com01的项目" class="header-anchor">#</a> 1. 创建一个Com01的项目</h4> <p><img src="http://file.bubuzi.cc/20230225144940.png" alt="20230225144940"> <img src="http://file.bubuzi.cc/20230225145017.png" alt="20230225145017"></p> <h4 id="_2-直接确认即可"><a href="#_2-直接确认即可" class="header-anchor">#</a> 2. 直接确认即可</h4> <p><img src="http://file.bubuzi.cc/20230225145050.png" alt="20230225145050"></p> <h4 id="_3-添加类"><a href="#_3-添加类" class="header-anchor">#</a> 3. 添加类</h4> <p><img src="http://file.bubuzi.cc/20230225145151.png" alt="20230225145151"></p> <h4 id="_4-选中atl简单对象-输入comtest类名-然后确认"><a href="#_4-选中atl简单对象-输入comtest类名-然后确认" class="header-anchor">#</a> 4. 选中<code>ATL简单对象</code>，输入<code>ComTest</code>类名，然后确认</h4> <p><img src="http://file.bubuzi.cc/20230225145315.png" alt="20230225145315"></p> <h4 id="_5-输入progid-这个于后续程序调用有关"><a href="#_5-输入progid-这个于后续程序调用有关" class="header-anchor">#</a> 5. 输入<code>ProgID</code>,这个于后续程序调用有关</h4> <p><img src="http://file.bubuzi.cc/20230225145429.png" alt="20230225145429"></p> <blockquote><p>做到这里可以选择项目生成一下，检查是否存在错误</p></blockquote> <h4 id="_6-打开comtest-h文件-添加新函数"><a href="#_6-打开comtest-h文件-添加新函数" class="header-anchor">#</a> 6. 打开<code>ComTest.h</code>文件，添加新函数</h4> <p><img src="http://file.bubuzi.cc/20230225145748.png" alt="20230225145748">
+注意：这里函数必须以<code>HRESULT</code>为返回值，且需要携带<code>STDMETHODCALLTYPE</code>签名，否则编译不通过</p> <h4 id="_7-在comtest-cpp中实现函数"><a href="#_7-在comtest-cpp中实现函数" class="header-anchor">#</a> 7. 在<code>ComTest.cpp</code>中实现函数</h4> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>// CComTest
+
+HRESULT __stdcall CComTest::add(int a, int b, int* rev)
+{
+	*rev = a + b;
+	return S_OK;
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h4 id="_8-编辑com01-idl中的导出函数"><a href="#_8-编辑com01-idl中的导出函数" class="header-anchor">#</a> 8. 编辑<code>Com01.idl</code>中的导出函数</h4> <p>把函数签名加上</p> <div class="language-C# line-numbers-mode"><pre class="language-text"><code>// 原来：
+interface IComTest : IDispatch
+{
+};
+// 改为
+interface IComTest : IDispatch
+{
+    HRESULT add(int a, int b, int* rev);
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h4 id="_9-选择x86架构-右键项目-选择生成"><a href="#_9-选择x86架构-右键项目-选择生成" class="header-anchor">#</a> 9. 选择x86架构，右键项目，选择生成</h4> <p><img src="http://file.bubuzi.cc/1677308783539.jpg" alt="1677308783539"> <img src="http://file.bubuzi.cc/20230225150701.png" alt="20230225150701"></p> <blockquote><p>可以看见，dll已经生产成功了</p></blockquote> <h4 id="_10-生成后-项目中诞生了两个文件"><a href="#_10-生成后-项目中诞生了两个文件" class="header-anchor">#</a> 10. 生成后，项目中诞生了两个文件</h4> <p>注意保留<code>Com01_i.c</code>和<code>Com01_i.h</code></p> <p><img src="http://file.bubuzi.cc/20230225152213.png" alt="20230225152213"></p> <h3 id="注册dll为com"><a href="#注册dll为com" class="header-anchor">#</a> 注册DLL为COM</h3> <h4 id="_1-进入编译路径-打开命令行"><a href="#_1-进入编译路径-打开命令行" class="header-anchor">#</a> 1. 进入编译路径，打开命令行</h4> <p><img src="http://file.bubuzi.cc/20230225150818.png" alt="20230225150818"></p> <h4 id="_2-在命令行里注册"><a href="#_2-在命令行里注册" class="header-anchor">#</a> 2. 在命令行里注册</h4> <div class="language-powershell line-numbers-mode"><pre class="language-powershell"><code><span class="token function">PS</span> D:\project\CppL\Com01\Debug&gt; regsvr32 Com01<span class="token punctuation">.</span>dll
+<span class="token function">PS</span> D:\project\CppL\Com01\Debug&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>弹出如下消息，就说明安装成功</p> <p><img src="http://file.bubuzi.cc/20230225150922.png" alt="20230225150922"></p> <h4 id="_3-添加至系统组件中"><a href="#_3-添加至系统组件中" class="header-anchor">#</a> 3. 添加至系统组件中</h4> <p>依次打开<code>控制面板</code>-&gt;<code>Windows 工具</code>-&gt;<code>组件服务</code></p> <h4 id="_4-新增组件"><a href="#_4-新增组件" class="header-anchor">#</a> 4. 新增组件</h4> <p>依次打开<code>控制台根节点</code>-&gt;<code>组件服务</code>-&gt;<code>计算机</code>-&gt;<code>我的电脑</code>-&gt;<code>COM+ 应用程序</code>
+单机右键新增
+<img src="http://file.bubuzi.cc/20230225151322.png" alt="20230225151322"> <img src="http://file.bubuzi.cc/20230225151344.png" alt="20230225151344"> <img src="http://file.bubuzi.cc/20230225151403.png" alt="20230225151403"></p> <p>按需求设置账户，我这里选择本地服务
+<img src="http://file.bubuzi.cc/20230225151435.png" alt="20230225151435"></p> <p>直接下一步</p> <p><img src="http://file.bubuzi.cc/20230225151457.png" alt="20230225151457"> <img src="http://file.bubuzi.cc/20230225151510.png" alt="20230225151510"></p> <h4 id="_5-将刚刚编译的dll放入组件中"><a href="#_5-将刚刚编译的dll放入组件中" class="header-anchor">#</a> 5. 将刚刚编译的dll放入组件中</h4> <p>在组件上右键，选择新建</p> <p><img src="http://file.bubuzi.cc/20230225151608.png" alt="20230225151608"></p> <p>选择已注册组件</p> <p><img src="http://file.bubuzi.cc/20230225151649.png" alt="20230225151649"></p> <p>由于刚刚我们编译的是32位程序，所以勾选上32位，
+这里显示的名称就是创建类时填入的<code>ProgID</code> <img src="http://file.bubuzi.cc/20230225151751.png" alt="20230225151751"> <img src="http://file.bubuzi.cc/20230225151904.png" alt="20230225151904"></p> <h3 id="x64程序调用该32位程序"><a href="#x64程序调用该32位程序" class="header-anchor">#</a> x64程序调用该32位程序</h3> <h4 id="_1-创建一个简单的c-x64的项目"><a href="#_1-创建一个简单的c-x64的项目" class="header-anchor">#</a> 1. 创建一个简单的C++x64的项目</h4> <h4 id="_2-导入com01-i-h和com01-i-c至项目中"><a href="#_2-导入com01-i-h和com01-i-c至项目中" class="header-anchor">#</a> 2. 导入<code>Com01_i.h</code>和<code>Com01_i.c</code>至项目中</h4> <p><img src="http://file.bubuzi.cc/20230225152509.png" alt="20230225152509"></p> <h4 id="_3-编写代码测试"><a href="#_3-编写代码测试" class="header-anchor">#</a> 3. 编写代码测试</h4> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &quot;Com01_i.h&quot;
+
+int main() {
+	CoInitialize(NULL);
+
+	COSERVERINFO si;
+	MULTI_QI     qi;
+
+	ZeroMemory(&amp;si, sizeof(si));
+	ZeroMemory(&amp;qi, sizeof(qi));
+	wchar_t wtext[20] = L&quot;127.0.0.1&quot;;
+	si.pwszName = wtext;//自己机器的IP
+	si.pAuthInfo = NULL;
+
+	qi.pIID = &amp;IID_IComTest;
+	qi.pItf = NULL;
+	long hr = CoCreateInstanceEx(CLSID_ComTest, NULL, CLSCTX_REMOTE_SERVER, &amp;si, 1, &amp;qi);
+	if (FAILED(hr) || FAILED(qi.hr))
+	{
+		return -1;	//连接服务器失败
+	}
+	IComTest* pT = NULL;
+	qi.pItf-&gt;QueryInterface(&amp;pT);
+	qi.pItf-&gt;Release();
+	int a = 10;
+	int b = 11;
+	int c = 0;
+	long np = pT-&gt;add(a, b, &amp;c);
+	pT-&gt;Release();
+
+	printf(&quot;np: %d, c: %d\n&quot;, np, c);
+	CoUninitialize(); 
+	std::system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><p>可以看见，64位成功调用~!</p> <p><img src="http://file.bubuzi.cc/20230225152838.png" alt="20230225152838"></p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">2/25/2023, 3:37:40 PM</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/_post/work/notes/Edge中开启IE模式.html">
+          Edge中开启IE模式
+        </a></span></p></div> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:0;" data-v-b57cc07c data-v-7dd95ae2></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.0404c36e.js" defer></script><script src="/assets/js/3.597370e5.js" defer></script><script src="/assets/js/1.28e85978.js" defer></script><script src="/assets/js/22.f4338ab2.js" defer></script>
+  </body>
+</html>
